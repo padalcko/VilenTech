@@ -1,0 +1,249 @@
+/* Основні стилі */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    color: var(--main-text-color, #333);
+    background-color: var(--main-bg-color, #fff);
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Перша секція */
+.features-section {
+    padding: 40px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.features-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.features-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.features-left,
+.features-right {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 20px;
+    background: var(--accent-bg-color, #fff);
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover,
+.feature-item:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feature-item img {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.feature-item-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-item-content h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.feature-item-content p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--accent-text-color, #555);
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img {
+    max-width: 100%;
+    width: 400px;
+    height: auto;
+}
+
+/* Друга секція */
+.products-section {
+    padding: 40px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.products-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    gap: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover,
+.product-item:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-item img {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+.product-item-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-item-content h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-item-content p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+    flex-grow: 1;
+}
+
+.order-button {
+    display: inline-block;
+    background-color: #ff6b6b;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.order-button:hover {
+    background-color: #ff4949;
+    transform: translateY(-2px);
+}
+
+.order-button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+
+    .features-container,
+    .products-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .features-section,
+    .products-section {
+        padding: 20px;
+    }
+
+    .features-container,
+    .products-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .features-left,
+    .features-right {
+        order: 1;
+    }
+
+    .image {
+        order: 2;
+    }
+
+    .feature-item {
+        flex-direction: column;
+    }
+}
